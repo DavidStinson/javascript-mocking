@@ -1,0 +1,16 @@
+{
+  "name": "javascriptmocking",
+  "version": "1.0.0",
+  "description": "JavaScript Mocking",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": "https://github.com/DavidStinson/javascript-mocking",
+  "author": "David Stinson",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
+}

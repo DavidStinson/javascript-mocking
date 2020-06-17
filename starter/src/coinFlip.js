@@ -26,6 +26,4 @@ function coinFlip(playerOne, playerTwo) {
   return playerOneWins > playerTwoWins ? playerOne : playerTwo;
 }
 
-console.log(coinFlip("player1", "player2"));
-
 module.exports = coinFlip;
