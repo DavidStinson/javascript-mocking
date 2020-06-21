@@ -2,11 +2,11 @@ const coinFlip = require("../coinFlip");
 const utils = require("../utils");
 
 test("returns winner", () => {
-  const initialGetCalledHeads = utils.getCalledHeads;
-  const initialGetCoinFlip = utils.getCoinFlip;
+  jest.spyOn(utils, "getCalledHeads")
+  jest.spyOn(utils, "getCoinFlip")
 
-  utils.getCalledHeads = jest.fn((playerOne, playerTwo) => playerOne);
-  utils.getCoinFlip = () => "heads";
+  utils.getCalledHeads.mockImplementation((playerOne, playerTwo) => playerOne);
+  utils.getCoinFlip.mockImplementation(() => "heads");
 
   const winner = coinFlip("llama", "dog");
 
@@ -17,6 +17,6 @@ test("returns winner", () => {
     ["llama", "dog"],
   ]);
 
-  utils.getCalledHeads = initialGetCalledHeads;
-  utils.getCoinFlip = initialGetCoinFlip;
+  utils.getCalledHeads.mockRestore()
+  utils.getCoinFlip.mockRestore()
 });
